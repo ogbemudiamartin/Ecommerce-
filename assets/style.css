@@ -583,7 +583,7 @@ footer .copyright{
 }
 
 #feature .fe-box{
-    margin: 15px 15px;
+    margin: 10px 10px;
 }
 
 
@@ -611,6 +611,9 @@ footer .copyright{
 #banner3 .banner-box3{
     width: 28%;
 }
+#sm-banner{
+    min-width: 150px;
+}
 
 #newsletter .form{
     width: 70%;
@@ -620,10 +623,10 @@ footer .copyright{
 
 @media(max-width: 477px){
     .section-p1{
-        padding: 20px;
+        padding: 18px;
     }
     #header{
-        padding: 10px 30px;
+        padding: 17px 27px;
     }
    
     h1{
@@ -631,10 +634,10 @@ footer .copyright{
     }
       
     h2{
-        font-size: 32px;
+        font-size: 39px;
     }
     #hero{
-        padding: 0px 20px;
+        padding: 0px 18px;
         background-position: 55%;
     }
    
@@ -648,7 +651,7 @@ footer .copyright{
 
     #feature .fe-box{
         width:155px;
-        margin: 0 0 15px 0;
+        margin: 0 0 7px 0;
     }
 
     #product .pro{
