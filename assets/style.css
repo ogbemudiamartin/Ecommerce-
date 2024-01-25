@@ -160,7 +160,10 @@ body{
     font-weight: 700;
     font-size: 15px;
 }
-
+#hero  a{
+    text-decoration: none;
+    color: #088178;
+}
 #feature{
     display: flex;
     align-items: center;

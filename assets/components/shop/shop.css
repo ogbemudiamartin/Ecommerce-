@@ -75,7 +75,8 @@ body{
     padding: 20px 80px;
     background: #e3e6f3;
     box-shadow: 0 5px 15px rgba( 0, 0, 0, .06);
-    position: sticky;
+    position: fixed;
+    width: 100vw;
     top: 0;
     left: 0;
     z-index: 999;
@@ -101,6 +102,24 @@ body{
     font-weight: 600;
     color: #1a1a1a;
     transition: 0.3s ease;
+}
+
+#lg-bag {
+    position: relative;
+}
+#lg-bag span{
+        display: flex;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        right: 12px;
 }
 
 #navbar li a:hover,
@@ -130,4 +149,176 @@ body{
 
 #navbar.active{
     right: 0px;
+}
+
+#product1{
+    text-align: center;
+}
+#product1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba( 0, 0, 0, .02);
+    margin: 15px 0;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+#product1 .pro-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.pro a{
+    position: relative;
+    bottom: 26px;
+    left: 90px;
+    color: #088178;
+}
+#product1 .pro:hover{
+    box-shadow: 20px 20px  30px rgba( 0, 0, 0, .06);
+}
+#product1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .des{
+    text-align: start;
+    padding: 10px 0
+}
+
+#product1 .pro .des span{
+    color: #606063;
+    font-size: 12px;
+}
+
+#product1 .pro .des h5{
+    padding-top: 7px;
+    color:#1a1a1a;
+    font-size: 14px;
+}
+
+#product1 .pro .des i{
+    font-size: 12px;
+    color: rgb(243, 181 , 25);
+}
+
+#product1 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 .pro .cart{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid  #cce7d0;
+    position:absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.cartTab{
+    width: 380px;
+    height: 90vh;
+    background: #e3e6f3;
+    padding: 1rem;
+    color: #eee;
+    position: fixed;
+    top: 5rem;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s ease-in-out;
+}
+
+.cartTab h2{
+    padding: 5px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #484848;
+}
+/* .showCart */
+body  .active .cartTab {
+    right: 0;
+}
+
+.cartTab .btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+}
+.cartTab  .btn button{
+    background-color: #088178;
+    border: none;
+    font-weight: 500;
+    color: #fff;
+    padding: .8rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background: rgb(216, 10, 10);
+}
+
+.cartTab .listCart .item img{
+    width: 70px;
+    border-radius: 1rem;
+    border: 1px solid rgb(190, 188, 188);
+    padding: 4px;
+}
+
+.cartTab .listCart .item{
+    display: flex;
+    justify-content: space-around;
+    padding: 3px;
+    gap: 10px;
+    text-align: start;
+    align-items: center;
+    color: #000;
+}
+
+.listCart .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    background-color: #18879b;
+    color: #dacccc;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 3px;
+    
+}
+
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #fff;
+}
+
+.listCart .item:nth-child(even){
+   background: #d8d8d8;
+}
+.listCart{
+    overflow: auto;
 }
