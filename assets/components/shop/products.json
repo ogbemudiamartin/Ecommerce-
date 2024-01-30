@@ -55,13 +55,13 @@
     },
     {
         "id": 10,
-        "name": "Adidas",
+        "name": "supreme",
         "price": 230,
         "image": "n2.jpg"
     },
     {
         "id": 11,
-        "name": "Adidas",
+        "name": "Nike",
         "price": 290,
         "image": "n3.jpg"
     },
@@ -79,7 +79,7 @@
     },
     {
         "id": 15,
-        "name": "Adidas",
+        "name": "Gucci",
         "price": 60,
         "image": "n7.jpg"
     },
@@ -88,5 +88,11 @@
         "name": "Adidas",
         "price": 98,
         "image": "n8.jpg"
+    },
+    {
+        "id": 17,
+        "name": "supreme",
+        "price": 134,
+        "image": "n3.jpg"
     }
 ]

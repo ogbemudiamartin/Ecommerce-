@@ -66,6 +66,7 @@ p{
 }
 body{
     width:100%;
+    background-color: white;
 }
 
 #header{
@@ -80,6 +81,10 @@ body{
     top: 0;
     left: 0;
     z-index: 999;
+}
+.nav{
+    display: flex;
+    position: relative;
 }
 #navbar{
     display:flex;
@@ -107,6 +112,9 @@ body{
 #lg-bag {
     position: relative;
 }
+#lg-bag a{
+    color: #2b2b2b;
+}
 #lg-bag span{
         display: flex;
         width: 14px;
@@ -121,7 +129,9 @@ body{
         top: 50%;
         right: 12px;
 }
-
+#close{
+    display: none;
+}
 #navbar li a:hover,
 #navbar li a.active{
    color:#088178;
@@ -289,7 +299,7 @@ body{
 .cartTab .listCart .item{
     display: flex;
     justify-content: space-around;
-    padding: 3px;
+    padding: 3px ;
     gap: 10px;
     text-align: start;
     align-items: center;
@@ -323,7 +333,311 @@ body{
 
 .listCart .item:nth-child(even){
    background: #d8d8d8;
+   border-radius: 5px;
+   padding-top: 5px;
 }
 .listCart{
     overflow: auto;
+}
+
+
+@media (max-width:799px){
+    .section-p1{
+        padding: 40px 80px;
+    }
+    #close{
+        display: block;
+    }
+
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right:-300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 040px 60pxx rgba(0,0,0,.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+    #navbar .active{
+        right:0px;
+    }
+
+    #navbar li{
+        margin-bottom: 25px;
+    }
+
+  #mobile{
+    display: block;
+  }
+
+    
+#close{
+    position: absolute;
+    top: 30px;
+    left:30px;
+    color:#222;
+    font-size: 24px;
+    display:initial;
+}
+.nav{
+    position: relative;
+}
+#lg-bag{
+    display: absolute;
+    left: 12rem;
+    
+}
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    background-position:top 30% right 30% ;
+}
+
+#feature{
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box{
+    margin: 10px 10px;
+}
+
+
+#product1 .pro-container{
+    justify-content: center;
+}
+
+#product .pro{
+  margin: 15px 0;
+}
+
+
+.cartTab{
+    width: 280px;
+    height: 90vh;
+    background: #e3e6f3;
+    padding: 1rem;
+    color: #eee;
+    position: fixed;
+    top: 5rem;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s ease-in-out;
+}
+
+.cartTab h2{
+    padding: 5px;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #484848;
+}
+/* .showCart */
+.activeShowCart{
+    position: fixed;
+    top: 5rem;
+    right: 0;
+}
+/* body  .active .cartTab {
+    right: 0;
+} */
+
+.cartTab .btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+}
+.cartTab  .btn button{
+    background-color: #088178;
+    border: none;
+    font-weight: 500;
+    color: #fff;
+    padding: .8rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background: rgb(216, 10, 10);
+}
+
+.cartTab .listCart .item img{
+    width: 60px;
+    border-radius: 1rem;
+    border: 1px solid rgb(190, 188, 188);
+    padding: 4px;
+}
+
+.cartTab .listCart .item{
+    display: flex;
+    justify-content: space-around;
+    padding: 3px ;
+    gap: 10px;
+    text-align: start;
+    align-items: center;
+    color: #000;
+}
+
+.listCart .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    background-color: #18879b;
+    color: #dacccc;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 3px;
+    
+}
+
+}
+
+
+@media(max-width: 477px){
+    .section-p1{
+        padding: 18px;
+    }
+    #header{
+        padding: 17px 27px;
+    }
+   
+    h1{
+        font-size: 38px;
+    }
+      
+    h2{
+        font-size: 39px;
+    }
+    #hero{
+        padding: 0px 18px;
+        background-position: 55%;
+    }
+    #lg-bag {
+        position: relative;
+        left: 4rem;
+    }
+   
+     #feature{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+     }
+
+
+    #feature .fe-box{
+        width:155px;
+        margin: 0 0 7px 0;
+    }
+
+    #product .pro{
+        width: 100%;
+    }
+
+
+    
+.cartTab{
+    width: 280px;
+    height: 90vh;
+    background: #e3e6f3;
+    padding: .6rem;
+    color: #eee;
+    position: fixed;
+    top: 5rem;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s ease-in-out;
+}
+
+.cartTab h2{
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #484848;
+}
+/* .showCart */
+.activeShowCart{
+    position: fixed;
+    top: 5rem;
+    right: 0;
+}
+/* body  .active .cartTab {
+    right: 0;
+} */
+
+.cartTab .btn{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: .6rem;
+}
+.cartTab  .btn button{
+    background-color: #088178;
+    border: none;
+    font-weight: 500;
+    color: #fff;
+    padding: .5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background: rgb(216, 10, 10);
+}
+
+.cartTab .listCart .item img{
+    width: 40px;
+    border-radius: 1rem;
+    border: 1px solid rgb(190, 188, 188);
+    padding: 4px;
+}
+
+.cartTab .listCart .item{
+    display: flex;
+    justify-content: space-around;
+    padding: 3px ;
+    gap: 7px;
+    text-align: start;
+    align-items: center;
+    color: #000;
+}
+
+.listCart .quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 1.2rem;
+    background-color: #18879b;
+    color: #dacccc;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 3px;
+    
+}
+
+  
 }

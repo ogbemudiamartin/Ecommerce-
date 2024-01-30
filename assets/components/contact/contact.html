@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body id="your-element-selector">
+    <section id="header">
+      <a href="#"><img src="/assets/img/logo.png" alt="" /></a>
+
+      <div>
+        <ul id="navbar">
+          <li><a href="/assets/index.html">Home</a></li>
+          <li><a href="/assets/components/shop/shop.html">shop</a></li>
+          <li><a href="/assets/components/Blog/Blog.html">Blog</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a class="active" href="#">Contact</a></li>
+          <li id="lg-bag">
+            <a href="#cart"><i class="fa fa-shopping-bag"></i></a>
+          </li>
+          <div id="close"><i class="fa fa-times"></i></div>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa fa-shopping-bag"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+    <main>
+      <section class="container">
+        <div class="content">
+          <h3>kwodjo</h3>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script>
+      VANTA.GLOBE({
+        el: "#your-element-selector",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x0,
+        color2: 0x0,
+        size: 2.0,
+        backgroundColor: 0xffffff,
+      });
+    </script>
+  </body>
+</html>

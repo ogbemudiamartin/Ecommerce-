@@ -6,7 +6,8 @@ const listProductHTML = document.querySelector('.pro-container')
 const listCart = document.querySelector('.listCart')
 const Pro = document.querySelector('.pro')
 const shoppingCart = document.querySelector('.fa-shopping-cart')
-const iconCartSpan = document.querySelector('.lg-bag span')
+const iconCartSpan = document.querySelector('.iconCartSpan')
+console.log(iconCartSpan)
 let listProducts = []
 let carts = []
 
@@ -72,31 +73,80 @@ let addToCart = (product_id) => {
         carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1
     }
     addToCartHTML()
+    addCartMemory()
     console.log(carts)
 }
 
+const addCartMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(carts))
+}
 const addToCartHTML = () => {
     listCart.innerHTML = ''
+    let totalQuantity = 0;
     if(carts.length > 0){
         carts.forEach(cart => {
+            totalQuantity = totalQuantity + cart.quantity
             let newCart = document.createElement('div');
-            newCart.classList.add('pro');
+            newCart.classList.add('item');
+            newCart.dataset.id = cart.product_id
+            let positionProduct = listProducts.findIndex(( value) => value.id == cart.product_id)
+            let info = listProducts[positionProduct]
             newCart.innerHTML = `
-            <div class="item">
             <div class="image">
-              <img src="/assets/img/products/f4.jpg" alt="" />
+              <img src="/assets/img/products/${info.image}" alt="" />
             </div>
-            <div class="name">Name</div>
-            <div class="totalPrice"></div>
+            <div class="name">${info.name}</div>
+            <div class="totalPrice">${info.price * cart.quantity}$</div>
             <div class="quantity">
               <span class="minus">-</span>
               <span>${cart.quantity}</span>
-              <span class="plus"></span>
+              <span class="plus">+</span>
             </div>
-          </div>`
+
+            
+     `;
           listCart.appendChild(newCart)
         })
     }
+    iconCartSpan.innerHTML = totalQuantity;
+}
+
+listCart.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    console.log(positionClick)
+    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
+        let product_id = positionClick.parentElement.parentElement.dataset.id
+        console.log(product_id);
+        let type = 'minus'
+        if(positionClick.classList.contains('plus')){
+            type = 'plus'
+        }
+        changeQuantity(product_id, type)
+    }
+})
+
+const changeQuantity = (product_id, type) => {
+ let positionItemInCarts = carts.findIndex((value) => value.product_id == product_id);
+ console.log('types:'+ positionItemInCarts);
+
+ if(positionItemInCarts >= 0){
+    switch(type){
+        case 'plus':
+            carts[positionItemInCarts].quantity = carts[positionItemInCarts].quantity + 1;
+            break;
+
+            default:
+                let valueChange = carts[positionItemInCarts].quantity - 1;
+                if(valueChange > 0){
+                    carts[positionItemInCarts].quantity = valueChange;
+                } else{
+                    carts.splice(positionItemInCarts, 1);
+                }
+                break;
+    }
+ }
+ addCartMemory();
+ addDataToHTML();
 }
 const initApp = () => {
 fetch('/assets/components/shop/products.json')
@@ -105,8 +155,31 @@ fetch('/assets/components/shop/products.json')
      listProducts = data ;
      addDataToHTML();
 
+    //  get cart from memory\
+    if(localStorage.getItem('cart')){
+        carts = JSON.parse(localStorage.getItem('cart'));
+        addDataToHTML()
+    }
+
     console.log(listProducts)
     })
     .catch(err => console.log(`error message:${err}`))
 }
 initApp()
+
+
+const bar = document.getElementById('bar')
+const closed = document.getElementById('close')
+const nav = document.getElementById('navbar')
+
+if(bar){
+    bar.addEventListener('click', ()=>{
+        nav.classList.add('active')
+    })
+}
+
+if(closed){
+    closed.addEventListener('click', ()=>{
+        nav.classList.remove('active')
+    })
+}
