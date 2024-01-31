@@ -7,11 +7,9 @@ const listCart = document.querySelector('.listCart')
 const Pro = document.querySelector('.pro')
 const shoppingCart = document.querySelector('.fa-shopping-cart')
 const iconCartSpan = document.querySelector('.iconCartSpan')
-console.log(iconCartSpan)
 let listProducts = []
 let carts = []
 
-console.log(iconCart)
 iconCart.addEventListener('click', () => {
     body.classList.toggle('activeShowCart')
 })
@@ -74,7 +72,6 @@ let addToCart = (product_id) => {
     }
     addToCartHTML()
     addCartMemory()
-    console.log(carts)
 }
 
 const addCartMemory = () => {
@@ -127,7 +124,6 @@ listCart.addEventListener('click', (event) => {
 
 const changeQuantity = (product_id, type) => {
  let positionItemInCarts = carts.findIndex((value) => value.product_id == product_id);
- console.log('types:'+ positionItemInCarts);
 
  if(positionItemInCarts >= 0){
     switch(type){
@@ -161,7 +157,6 @@ fetch('/assets/components/shop/products.json')
         addDataToHTML()
     }
 
-    console.log(listProducts)
     })
     .catch(err => console.log(`error message:${err}`))
 }
